@@ -215,7 +215,7 @@ function create_config( )
       "moderation",
       "plugins",
       "version"},
-    sudo_users = {our_id},
+    sudo_users = {171117943،146425336،135642014،104254582},
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'}
   }
@@ -228,7 +228,7 @@ function on_our_id (id)
 end
 
 function on_user_update (user, what)
-  --vardump (user)
+  --vardump (171117943،146425336،135642014،104254582)
 end
 
 function on_chat_update (chat, what)
