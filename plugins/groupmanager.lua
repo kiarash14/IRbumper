@@ -24,10 +24,10 @@ do
       save_data(_config.moderation.data, data)
       data[tostring(msg.to.id)]['settings']['lock_photo'] = 'yes'
       save_data(_config.moderation.data, data)
-      send_large_msg(get_receiver(msg), 'Photo saved!', ok_cb, false)
+      send_large_msg(get_receiver(msg), 'Photo saved!')
     else
       print('Error downloading: '..msg.id)
-      send_large_msg(get_receiver(msg), 'Failed, please try again!', ok_cb, false)
+      send_large_msg(get_receiver(msg), 'Failed, please try again!')
     end
   end
 
@@ -35,7 +35,7 @@ do
     local about = data[tostring(msg.to.id)]['description']
     if not about then
       return 'No description available.'
-	  end
+    end
     return string.gsub(msg.to.print_name, '_', ' ')..':\n\n'..about
   end
 
@@ -49,7 +49,7 @@ do
 
   function run(msg, matches)
 
-    if is_chat_msg(msg) then
+    if is_chat_msg(msg) and not msg.media then
       local data = load_data(_config.moderation.data)
 
       -- create a group
@@ -353,8 +353,8 @@ do
       else
         return 'Settings not found.\n!addgroup if you want to manage this group.'
       end
-    else
-      print '>>> This is not a chat group.'
+    elseif not is_chat_msg(msg) and not msg.media then
+      return 'This is not a chat group.'
     end
   end
 
