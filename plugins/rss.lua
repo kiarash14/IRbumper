@@ -138,7 +138,7 @@ local function cron()
       i = i+1
       local title = v2.title or 'No title'
       local link = v2.link or v2.id or 'No Link'
-      text = text..i..'. 'title..'\n'..link..'\n'
+      text = text..i..'. '..title..'\n'..link..'\n'
     end
     if text ~= '' then
       local newlast = newentr[1].id
