@@ -49,10 +49,8 @@ do
       end)
 
     local text = ''
-    local i = 0
     for k,user in pairs(users_info) do
-      i = i+1
-      text = text..i..'. '..user.name..' = '..user.msgs..'\n'
+      text = text..k..'. '..user.name..' = '..user.msgs..'\n'
     end
 
     return text

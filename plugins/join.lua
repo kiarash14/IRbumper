@@ -15,11 +15,9 @@ do
   local function parsed_url(link)
     local parsed_link = URL.parse(link)
     local parsed_path = URL.parse_path(parsed_link.path)
-    i = 0
     for k,segment in pairs(parsed_path) do
-      i = i + 1
       if segment == 'joinchat' then
-        invite_link = string.gsub(parsed_path[i+1], '[ %c].+$', '')
+        invite_link = string.gsub(parsed_path[k+1], '[ %c].+$', '')
         break
       end
     end

@@ -21,10 +21,8 @@ do
 
   local function stringlinks(results)
     local stringresults=''
-    i = 0
     for key,val in ipairs(results) do
-      i = i+1
-      stringresults=stringresults..i..'. '..val[1]..'\n'..val[2]..'\n'
+      stringresults=stringresults..key..'. '..val[1]..'\n'..val[2]..'\n'
     end
     return stringresults
   end

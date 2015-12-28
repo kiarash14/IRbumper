@@ -31,7 +31,7 @@ local function get_rss(url, prot)
   end
   local parsed = feedparser.parse(res)
   if parsed == nil then
-    return nil, 'Error decoding the RSS.\nAre you sure that '..url..' it\'s an RSS?'
+    return nil, 'Error decoding the RSS.\nAre you sure that '..url..' is an RSS?'
   end
   return parsed, nil
 end
@@ -133,12 +133,10 @@ local function cron()
     local newentr = get_new_entries(last, parsed.entries)
     local subscribers = {}
     local text = ''  -- Send only one message with all updates
-    i = 0
     for k2, v2 in pairs(newentr) do
-      i = i+1
       local title = v2.title or 'No title'
       local link = v2.link or v2.id or 'No Link'
-      text = text..i..'. '..title..'\n'..link..'\n'
+      text = text..k2..'. '..title..'\n'..link..'\n'
     end
     if text ~= '' then
       local newlast = newentr[1].id

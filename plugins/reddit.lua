@@ -1,7 +1,7 @@
 do
 
   local function run(msg, matches)
-    -- comment this line if you want reddit.lua works in private message.
+    -- comment this line if you want reddit.lua to works in private message.
     if not is_chat_msg(msg) then return nil end
 
     if is_chat_msg(msg) then
@@ -29,7 +29,6 @@ do
 		  return nil
 	  end
 
-    local i = 0 + 1
 	  local subreddit = ''
 	  for i,v in ipairs(jdat.data.children) do
 		  if v.data.over_18 then
