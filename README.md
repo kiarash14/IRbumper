@@ -15,7 +15,7 @@ Run system commands.
 Manage channels. Enable or disable channel.
 5. **Google**
 Google safe search.
-6. **Greeter**https://github.com/rizaumami/merbot/wiki/Plugins#greeter 
+6. **Greeter** 
 Sends a custom message when a user enters or leave a chat.
 7. **Group Manager**
 Manage group chat.
